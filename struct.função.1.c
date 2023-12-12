@@ -15,15 +15,14 @@ void Exibe(struct dados_contato cont[], char* contdesejado) {
 int i;
 for (i = 0; i < 3; i++) {
 if (strcmp(cont[i].nome, contdesejado) == 0) {
-	printf("telefone de %s: s%", cont[i].nome, cont[i].telefone);
+	printf("telefone de %s:  %s ", cont[i].nome, cont[i].telefone);
 	break;
 } else {
-printf("\ncontato não encontrado");
+printf("\ncontato nÃ£o encontrado");
 break;	
 }
 }
 }
-
 
 
 int main () {
@@ -49,13 +48,13 @@ fflush(stdin);
 printf("\n\nexibindo dados  \n");
 for (i = 0; i < 3; i++) {
 printf("\n\nnome: %s ", cont[i].nome);
-printf("\nemail: %s", cont[i].email);
+printf("\nemail: %s ", cont[i].email);
 printf("\ntelefone: %s ", cont[i].telefone);
 }
 
 fflush(stdin);
 
-printf("\n\ncontato que queira procurar:  ");
+printf("\n\ncontato desejado:  ");
 gets(contdesejado);
 
 Exibe(cont, contdesejado);

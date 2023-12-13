@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include <locale.h>
 
 #define TAM 2
@@ -32,7 +33,7 @@ char* Situacao(float media) {
 }
 
 int main() {
-    setlocale(LC_ALL, "");
+    setlocale(LC_ALL, "portuguese");
    
    	char nome[TAM] [50], nascimento [TAM] [50];
     float notas[TAM];
@@ -43,31 +44,33 @@ int main() {
 for(i = 0; i < TAM; i++) {
     	fflush(stdin);
     	
-    	printf("\nDigite o %dª nome: ", i + 1);
+    	printf("\nDigite o %dÂª nome: ", i + 1);
         gets(nome[i]);
         
-        printf("data de nascimento: ", i + 1);
+        printf("\ndata de nascimento: ", i + 1);
         gets(nascimento[i]);
         
         fflush(stdin);
         
 	for(j = 0; j < TAM; j++) {
-        printf("\nDigite a %dª nota: ", j + 1);
+        printf("\nDigite a %dÂª nota: ", j + 1);
         scanf("%f",&notas[j]);
     }
     }
 
-    media = calcular(notas);
+system("clear || cls");
+
+media = calcular(notas);
 
 for(i = 0; i < TAM; i++) {
 	printf("\nnome: %s ", nome[i]);
 	printf("\ndata de nascimento: %s ", nascimento[i]);
 	printf("\n");
 	for(j = 0; j < TAM; j++) {
-		printf("\nnota:  %d ", notas[j]);
+		printf("\nnota:  %.2f ", notas[j]);
 }
 printf("\n");
-    printf("\nMédia: %.1f ", media);
+    printf("\nMÃ©dia: %.1f ", media);
     printf("\nResultado: %s ", Situacao(media));
 }
 
